@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacman</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacman</title>
+
+  <style>
+    /* Centraliza tudo e deixa responsivo */
+    body {
+      margin: 0;
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    canvas {
+      /* Tamanho base */
+      width: 80vmin;
+      height: 80vmin;
+      max-width: 700px;   /* Limite para telas grandes */
+      max-height: 700px;
+      image-rendering: pixelated; /* mantém o visual retrô */
+    }
+
+    /* Esconde as imagens auxiliares */
+    .hidden-assets {
+      display: none;
+    }
+  </style>
 </head>
 
-<body 
-   style="
-    margin: 0;
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  "
->
-
-
+<body>
   <canvas id="canvas" width="500" height="500"></canvas>
-</body>
-    <div style="display:none;">
-        <img id="animation" src="assets/animations.gif" width="140" height="20">
-        <img id="ghosts" src="assets/ghost.png" width="140" height="20">
-    </div>
-    <script src="ghost.js"></script>
-    <script src="pacman.js"></script>
-    <script src="game.js"></script>
-</body>
 
+  <div class="hidden-assets">
+    <img id="animation" src="assets/animations.gif" width="140" height="20" />
+    <img id="ghosts" src="assets/ghost.png" width="140" height="20" />
+  </div>
+
+  <script src="ghost.js"></script>
+  <script src="pacman.js"></script>
+  <script src="game.js"></script>
+</body>
 </html>
